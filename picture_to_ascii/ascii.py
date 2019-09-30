@@ -39,9 +39,9 @@ if __name__ == '__main__':
     for i in range(HEIGHT):
         for j in range(WIDTH):
             txt += get_char(*im.getpixel((j,i)))
-        txt += '\n'
+        #txt += '\n'
 
-    print txt
+    print(txt)
 
     
     if OUTPUT:
