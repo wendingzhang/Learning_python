@@ -11,10 +11,18 @@ actions_dict = dict(zip(letter_codes, actions * 2))
 
 #用户输入处理
 #阻塞＋循环，直到获得用户有效输入才返回对应行为：
-def get_user_action(keyboard):    
+def get_user_action(keyboard):
     char = "N"
-    while char not in actions_dict:    
+    while char not in actions_dict:
         char = keyboard.getch()
+        if char == curses.KEY_UP:
+            return 'Up'
+        elif char == curses.KEY_LEFT:
+            return 'Left'
+        elif char == curses.KEY_DOWN:
+            return 'Down'
+        elif char == curses.KEY_RIGHT:
+            return 'Right'
     return actions_dict[char]
 
 #矩阵转置
